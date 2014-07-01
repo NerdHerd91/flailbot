@@ -16,12 +16,6 @@ class FlailBot(irc.bot.SingleServerIRCBot):
     def on_privmsg(self, c, e):
         self.do_command(e, e.arguments[0])
 
-    def on_pubmsg(self, c, e):
-        a = e.arguments[0].split(":", 1)
-        if len(a) > 1 and irc.strings.lower(a[0]) == irc.strings.lower(self.connection.get_nickname()):
-            self.do_command(e, a[1].strip())
-        return
-    
     def do_command(self, e, cmd):
         nick = e.source.nick
         c.self.connection
@@ -51,6 +45,8 @@ def main():
         port = 6667
     channel = sys.argv[2]
     nickname = sys.argv[3]
+    print "Channel: " + channel
+    print "Nickname: " + nickname
 
     bot = FlailBot(channel, nickname, server, port)
     bot.start()
