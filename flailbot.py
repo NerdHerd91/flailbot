@@ -26,7 +26,7 @@ class FlailBot(irc.IRCClient):
 
     def privmsg(self, user, channel, msg):
         if msg == ".awk":
-            self.msg(channel, "BUT AWKWARD DDD:")
+            self.msg(channel, "BUT AWKWARDDDDDDD D:")
         if msg == ".fail":
             self.msg(channel, "WHAT IF FAILLLL?! D:")
         if msg == ".flail":
