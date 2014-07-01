@@ -25,8 +25,16 @@ class FlailBot(irc.IRCClient):
         self.join(self.factory.channel)
 
     def privmsg(self, user, channel, msg):
+        if msg == ".awk":
+            self.msg(channel, "BUT AWKWARD DDD:")
+        if msg == ".fail":
+            self.msg(channel, "WHAT IF FAILLLL?! D:")
         if msg == ".flail":
             self.msg(channel, "FLAILLLLLLLLLL!!!")
+        if msg == "Do you like cupcakes?":
+            self.msg(channel, "I LOVE CUPCAKES!!!")
+        if msg == "Really?":
+            self.msg(channel, "REALLY!!!")
 
 class FlailBotFactory(protocol.ClientFactory):
     """A factory for FlailBots"""
